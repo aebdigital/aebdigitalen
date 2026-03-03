@@ -56,8 +56,6 @@ export function Header() {
       <span className="text-white/30">|</span>
       <a href={getLocalizedHref('cz')} className={`transition-colors ${currentLang === 'cz' ? 'text-white font-bold' : 'text-white/60 hover:text-white'}`}>CZ</a>
       <span className="text-white/30">|</span>
-      <a href={getLocalizedHref('at')} className={`transition-colors ${currentLang === 'at' ? 'text-white font-bold' : 'text-white/60 hover:text-white'}`}>AT</a>
-      <span className="text-white/30">|</span>
       <a href={getLocalizedHref('en')} className={`transition-colors ${currentLang === 'en' ? 'text-white font-bold' : 'text-white/60 hover:text-white'}`}>EN</a>
     </div>
   );
