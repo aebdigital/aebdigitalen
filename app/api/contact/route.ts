@@ -42,6 +42,28 @@ async function verifyTurnstile(token: string, ip?: string): Promise<boolean> {
   }
 }
 
+// Utility to detect high-entropy gibberish (common in bot strings like 'JMwzyzngCTXj')
+function isGibberish(text: string): boolean {
+  if (!text || text.length < 5) return false;
+
+  // High consonant to vowel ratio or long strings without vowels
+  const vowels = text.match(/[aeiouyáéíóúýäô]/gi) || [];
+  const consonants = text.match(/[bcdfghjklmnpqrstvwxzščťžďň]/gi) || [];
+
+  if (consonants.length > 5 && vowels.length === 0) return true;
+  if (consonants.length / (vowels.length || 1) > 5 && text.length > 10) return true;
+
+  // Check for very long strings of characters with no spaces (common in gibberish)
+  const words = text.split(/\s+/);
+  for (const word of words) {
+    if (word.length > 15 && !word.includes('@') && !word.includes('http')) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 // Simple in-memory rate limiting wrappers (will reset on Vercel instance reboot, but still helpful)
 const ipRateLimit = new Map<string, { count: number; lastReset: number }>();
 const emailRateLimit = new Map<string, { count: number; lastReset: number }>();
@@ -86,6 +108,18 @@ export async function POST(request: NextRequest) {
     // Fast submission block (bots typically submit instantly)
     if (startTime && Date.now() - startTime < 3000) {
       console.warn(`Fast submission detected. Bot suspected.`);
+      return NextResponse.json(
+        {
+          success: true,
+          message: 'Thank you! Your message has been sent successfully.',
+        },
+        { status: 200, headers }
+      );
+    }
+
+    // Gibberish Detection (Blocks random strings like 'JMwzyzngCTXj')
+    if (isGibberish(name) || isGibberish(message)) {
+      console.warn(`Gibberish detected in Name or Message. Bot suspected. Name: ${name}`);
       return NextResponse.json(
         {
           success: true,
