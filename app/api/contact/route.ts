@@ -42,6 +42,34 @@ async function verifyTurnstile(token: string, ip?: string): Promise<boolean> {
   }
 }
 
+// Simple in-memory rate limiting wrappers (will reset on Vercel instance reboot, but still helpful)
+const ipRateLimit = new Map<string, { count: number; lastReset: number }>();
+const emailRateLimit = new Map<string, { count: number; lastReset: number }>();
+const RATE_LIMIT_MAX = 3; // Max submissions per hour per IP/Email
+const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour
+
+function checkRateLimit(map: Map<string, { count: number; lastReset: number }>, key: string): boolean {
+  const now = Date.now();
+  const record = map.get(key);
+
+  if (!record) {
+    map.set(key, { count: 1, lastReset: now });
+    return true;
+  }
+
+  if (now - record.lastReset > RATE_LIMIT_WINDOW) {
+    map.set(key, { count: 1, lastReset: now });
+    return true;
+  }
+
+  if (record.count >= RATE_LIMIT_MAX) {
+    return false;
+  }
+
+  record.count += 1;
+  return true;
+}
+
 export async function POST(request: NextRequest) {
   // Set CORS headers for Vercel deployment if needed, or rely on Next.js default behavior
   const headers = {
@@ -53,7 +81,19 @@ export async function POST(request: NextRequest) {
 
   try {
     const data = await request.json();
-    const { name, email, message, turnstileToken, website } = data;
+    const { name, email, message, turnstileToken, website, startTime } = data;
+
+    // Fast submission block (bots typically submit instantly)
+    if (startTime && Date.now() - startTime < 3000) {
+      console.warn(`Fast submission detected. Bot suspected.`);
+      return NextResponse.json(
+        {
+          success: true,
+          message: 'Thank you! Your message has been sent successfully.',
+        },
+        { status: 200, headers }
+      );
+    }
 
     // Honeypot check: If the hidden field 'website' is filled, it's a bot.
     if (website && website.length > 0) {
@@ -68,6 +108,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const ip = request.headers.get('x-forwarded-for') || request.headers.get('client-ip') || 'Unknown IP';
+
+    // Rate Limiting Check
+    if (!checkRateLimit(ipRateLimit, ip) || !checkRateLimit(emailRateLimit, email)) {
+      console.warn(`Rate limit exceeded for IP: ${ip} or Email: ${email}`);
+      return NextResponse.json(
+        {
+          error: 'You have exceeded the submission limit. Please try again later.',
+          details: 'Rate limit exceeded.',
+        },
+        { status: 429, headers }
+      );
+    }
+
     // Verify Turnstile Token
     if (!turnstileToken) {
       return NextResponse.json(
@@ -78,8 +132,6 @@ export async function POST(request: NextRequest) {
         { status: 400, headers }
       );
     }
-
-    const ip = request.headers.get('x-forwarded-for') || request.headers.get('client-ip') || undefined;
     const isHuman = await verifyTurnstile(turnstileToken, ip);
     if (!isHuman) {
       return NextResponse.json(

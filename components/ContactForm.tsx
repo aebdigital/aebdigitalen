@@ -18,6 +18,12 @@ export function ContactForm() {
 
   const [loading, setLoading] = useState(false);
   const [formMessage, setFormMessage] = useState<{ text: string; type: 'success' | 'error' | '' }>({ text: '', type: '' });
+  const [startTime, setStartTime] = useState<number>(0);
+
+  // set start time only on client
+  React.useEffect(() => {
+    setStartTime(Date.now());
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -83,6 +89,7 @@ export function ContactForm() {
       message: fullMessage,
       turnstileToken: turnstileToken,
       website: website, // Include honeypot in payload
+      startTime: startTime,
     };
 
     try {
