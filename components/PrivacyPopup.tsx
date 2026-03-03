@@ -30,72 +30,72 @@ export function PrivacyPopup() {
         >
           &times;
         </button>
-        <h2 className="text-3xl font-bold mb-6">Ochrana osobných údajov</h2>
+        <h2 className="text-3xl font-bold mb-6">Privacy Policy</h2>
         <div className="privacy-content text-gray-light leading-relaxed text-base overflow-y-auto pr-4 max-h-[calc(90vh-100px)]">
-          <p className="mb-4"><strong>AEB Digital s. r. o.</strong><br/>
-          IČO: 57 307 709<br/>
-          Konateľ: Peter Samuel Bobák<br/>
-          E-mail: peter@aebdig.com<br/>
-          Tel.: +421 908 507 131</p>
+          <p className="mb-4"><strong>AEB Digital s. r. o.</strong><br />
+            Company ID: 57 307 709<br />
+            Executive: Peter Samuel Bobák<br />
+            E-mail: peter@aebdig.com<br />
+            Tel.: +421 908 507 131</p>
 
-          <p className="mb-8">Tieto Zásady ochrany osobných údajov (ďalej len „Zásady") popisujú, aké osobné údaje spracúvame v súvislosti s používaním našej webovej stránky a kontaktných formulárov.</p>
+          <p className="mb-8">These Privacy Policy Principles (hereinafter referred to as "Principles") describe what personal data we process in connection with the use of our website and contact forms.</p>
 
-          <hr className="my-8 border-gray-medium"/>
+          <hr className="my-8 border-gray-medium" />
 
-          <h2 className="text-2xl font-bold mb-4">I. Kontaktný formulár</h2>
-          <p className="mb-4">Na stránke www.aebdigital.sk prevádzkujeme kontaktný formulár na dvoch samostatných stránkach, ktorého účelom je umožniť vám:</p>
+          <h2 className="text-2xl font-bold mb-4">I. Contact Form</h2>
+          <p className="mb-4">On the website www.aebdigital.com, we operate a contact form on two separate pages, the purpose of which is to allow you to:</p>
           <ul className="list-disc list-inside mb-4 pl-4">
-            <li>Položiť otázku k našim produktom a službám</li>
-            <li>Požiadať o cenovú ponuku</li>
+            <li>Ask a question about our products and services</li>
+            <li>Request a price quote</li>
           </ul>
 
-          <p className="mb-2"><strong>Rozsah spracúvaných údajov:</strong></p>
+          <p className="mb-2"><strong>Scope of processed data:</strong></p>
           <ul className="list-disc list-inside mb-4 pl-4">
-            <li>Meno a priezvisko</li>
-            <li>E-mailová adresa</li>
-            <li>Telefónne číslo</li>
+            <li>Name and Surname</li>
+            <li>Email Address</li>
+            <li>Phone Number</li>
           </ul>
 
-          <p className="mb-2"><strong>Účel spracovania:</strong><br/>
-          Spracúvame uvedené údaje, aby sme vás mohli kontaktovať a reagovať na váš dopyt.</p>
+          <p className="mb-2"><strong>Purpose of processing:</strong><br />
+            We process the stated data to contact you and respond to your inquiry.</p>
 
-          <p className="mb-8"><strong>Právny základ:</strong><br/>
-          Článok 6 ods. 1 písm. b) GDPR – plnenie opatrení pred uzavretím zmluvy na žiadosť dotknutej osoby.</p>
+          <p className="mb-8"><strong>Legal basis:</strong><br />
+            Article 6(1)(b) GDPR – performance of measures prior to entering into a contract at the request of the data subject.</p>
 
-          <p className="mb-2"><strong>Doba uchovávania:</strong><br/>
-          Osobné údaje budeme uchovávať maximálne 10 rokov od odozvy na váš dopyt, pokiaľ nevznikne ďalší zmluvný vzťah.</p>
+          <p className="mb-2"><strong>Retention period:</strong><br />
+            Personal data will be kept for a maximum of 10 years from the response to your inquiry, unless another contractual relationship arises.</p>
 
-          <hr className="my-8 border-gray-medium"/>
+          <hr className="my-8 border-gray-medium" />
 
-          <h2 className="text-2xl font-bold mb-4">II. Súbory cookies</h2>
-          <p className="mb-4">Na našej webovej stránke používame cookies výlučne na nasledujúce účely:</p>
+          <h2 className="text-2xl font-bold mb-4">II. Cookies</h2>
+          <p className="mb-4">On our website, we use cookies exclusively for the following purposes:</p>
           <ul className="list-disc list-inside mb-4 pl-4">
-            <li><strong>Nevyhnutné cookies</strong> – zabezpečujú základnú funkčnosť stránky (napr. ukladanie relácie, nastavení prehliadača).</li>
-            <li><strong>Štatistické (analytické) cookies</strong> – pomáhajú nám pochopiť, ako návštevníci stránku používajú (nasadzujeme ich len so súhlasom používateľa).</li>
+            <li><strong>Necessary cookies</strong> – ensure basic site functionality (e.g., session storage, browser settings).</li>
+            <li><strong>Statistical (analytical) cookies</strong> – help us understand how visitors use the site (we only deploy them with user consent).</li>
           </ul>
 
-          <p className="mb-8"><strong>Správa súhlasov:</strong><br/>
-          Používateľ môže kedykoľvek odvolať súhlas s využívaním štatistických cookies prostredníctvom nastavení cookie lišty alebo priamo v prehliadači.</p>
+          <p className="mb-8"><strong>Consent management:</strong><br />
+            The user can withdraw consent to the use of statistical cookies at any time via the cookie bar settings or directly in the browser.</p>
 
-          <hr className="my-8 border-gray-medium"/>
+          <hr className="my-8 border-gray-medium" />
 
-          <h3 className="text-2xl font-bold mb-4">III. Práva dotknutej osoby</h3>
-          <p className="mb-4">Podľa nariadenia GDPR máte nasledujúce práva:</p>
+          <h3 className="text-2xl font-bold mb-4">III. Rights of the Data Subject</h3>
+          <p className="mb-4">Under the GDPR regulation, you have the following rights:</p>
           <ul className="list-disc list-inside mb-4 pl-4">
-            <li>Prístup k osobným údajom, ktoré spracúvame</li>
-            <li>Oprava nepresných alebo neúplných údajov</li>
-            <li>Vymazanie („právo zabudnutia"), ak na spracovanie už nie je právny základ</li>
-            <li>Obmedzenie spracovania</li>
-            <li>Prenosnosť údajov</li>
-            <li>Odvolanie súhlasu – stane sa účinným dňom odvolania</li>
-            <li>Podanie sťažnosti u Úradu na ochranu osobných údajov SR (Hraničná 12, 820 07 Bratislava, <a href="http://www.dataprotection.gov.sk" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:underline">www.dataprotection.gov.sk</a>)</li>
+            <li>Access to personal data we process</li>
+            <li>Correction of inaccurate or incomplete data</li>
+            <li>Deletion ("right to be forgotten") if there is no longer a legal basis for processing</li>
+            <li>Restriction of processing</li>
+            <li>Data portability</li>
+            <li>Withdrawal of consent – becomes effective on the day of withdrawal</li>
+            <li>Filing a complaint with the Office for Personal Data Protection of the Slovak Republic (Hraničná 12, 820 07 Bratislava, <a href="http://www.dataprotection.gov.sk" target="_blank" rel="noopener noreferrer" className="text-accent-teal hover:underline">www.dataprotection.gov.sk</a>)</li>
           </ul>
 
-          <p className="mb-8">V prípade otázok alebo uplatnenia Vašich práv nás môžete kontaktovať na <a href="mailto:reachout@aebdig.com" className="text-accent-teal hover:underline">reachout@aebdig.com</a> alebo telefónnom čísle +421 917 422 245.</p>
+          <p className="mb-8">In case of questions or exercising your rights, you can contact us at <a href="mailto:reachout@aebdig.com" className="text-accent-teal hover:underline">reachout@aebdig.com</a> or phone number +421 917 422 245.</p>
 
-          <hr className="my-8 border-gray-medium"/>
+          <hr className="my-8 border-gray-medium" />
 
-          <p className="italic text-gray-light"><em>Tieto Zásady nadobúdajú účinnosť dňom 25. 4. 2025.</em></p>
+          <p className="italic text-gray-light"><em>These Principles become effective on April 25, 2025.</em></p>
         </div>
       </div>
     </div>

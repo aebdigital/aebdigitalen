@@ -36,34 +36,34 @@ const anton = Anton({
   display: "swap",
 });
 
-const siteUrl = "https://aebdigital.sk";
+const siteUrl = "https://aebdigital.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Tvorba webových stránok Bratislava | Web dizajn & E-shopy | AEB Digital",
+    default: "Web Development Bratislava | Web Design & E-shops | AEB Digital",
     template: "%s | AEB Digital",
   },
-  description: "Profesionálna tvorba webových stránok, e-shopov a webových aplikácií v Bratislave. 120+ úspešných projektov, 5+ rokov skúseností. Responzívny dizajn, SEO optimalizácia, moderné technológie. Bezplatná konzultácia!",
+  description: "Professional web development, e-shops and web applications in Bratislava. 120+ successful projects, 5+ years of experience. Responsive design, SEO optimization, modern technologies. Free consultation!",
   keywords: [
-    "tvorba webových stránok",
+    "web development",
     "web design Bratislava",
-    "tvorba web stránok",
-    "webdizajn Bratislava",
-    "e-shop tvorba",
-    "eshop na mieru",
-    "webové aplikácie",
-    "responzívne web stránky",
-    "SEO optimalizácia",
-    "digital marketing Slovensko",
+    "website creation",
+    "web design",
+    "e-shop development",
+    "custom e-shop",
+    "web applications",
+    "responsive websites",
+    "SEO optimization",
+    "digital marketing",
     "AEB Digital",
-    "tvorba webu cena",
-    "web stránka na mieru",
-    "moderný web dizajn",
-    "profesionálne webové stránky",
-    "WordPress weby",
-    "React aplikácie",
-    "Next.js vývoj",
+    "website cost",
+    "custom website",
+    "modern web design",
+    "professional websites",
+    "WordPress websites",
+    "React applications",
+    "Next.js development",
   ],
   authors: [{ name: "AEB Digital", url: siteUrl }],
   creator: "AEB Digital",
@@ -76,29 +76,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
     languages: {
-      "sk-SK": siteUrl,
+      "en-US": siteUrl,
     },
   },
   openGraph: {
     type: "website",
-    locale: "sk_SK",
+    locale: "en_US",
     url: siteUrl,
     siteName: "AEB Digital",
-    title: "Tvorba webových stránok Bratislava | Web dizajn & E-shopy | AEB Digital",
-    description: "Profesionálna tvorba webových stránok, e-shopov a webových aplikácií v Bratislave. 120+ úspešných projektov. Bezplatná konzultácia!",
+    title: "Web Development Bratislava | Web Design & E-shops | AEB Digital",
+    description: "Professional web development, e-shops and web applications in Bratislava. 120+ successful projects. Free consultation!",
     images: [
       {
         url: "/sources/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "AEB Digital - Tvorba webových stránok Bratislava",
+        alt: "AEB Digital - Web Development Bratislava",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tvorba webových stránok Bratislava | AEB Digital",
-    description: "Profesionálna tvorba webových stránok, e-shopov a aplikácií. 120+ úspešných projektov. Bezplatná konzultácia!",
+    title: "Web Development Bratislava | AEB Digital",
+    description: "Professional web development, e-shops and applications. 120+ successful projects. Free consultation!",
     images: ["/sources/og-image.jpg"],
     creator: "@aebdigital",
   },
@@ -151,7 +151,7 @@ const organizationSchema = {
     width: 512,
     height: 512,
   },
-  description: "Profesionálna tvorba webových stránok, e-shopov a webových aplikácií v Bratislave.",
+  description: "Professional web development, e-shops and web applications in Bratislava.",
   foundingDate: "2019",
   founders: [
     {
@@ -198,7 +198,7 @@ const localBusinessSchema = {
   address: {
     "@type": "PostalAddress",
     addressLocality: "Bratislava",
-    addressRegion: "Bratislavský kraj",
+    addressRegion: "Bratislava Region",
     addressCountry: "SK",
   },
   geo: {
@@ -228,11 +228,11 @@ const websiteSchema = {
   "@id": `${siteUrl}/#website`,
   url: siteUrl,
   name: "AEB Digital",
-  description: "Profesionálna tvorba webových stránok, e-shopov a webových aplikácií v Bratislave.",
+  description: "Professional web development, e-shops and web applications in Bratislava.",
   publisher: {
     "@id": `${siteUrl}/#organization`,
   },
-  inLanguage: "sk-SK",
+  inLanguage: "en-US",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -247,7 +247,7 @@ const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${siteUrl}/#service`,
-  name: "AEB Digital - Tvorba webových stránok",
+  name: "AEB Digital - Web Development",
   image: `${siteUrl}/sources/favicon-aeb.png`,
   url: siteUrl,
   telephone: "+421-908-507-131",
@@ -258,12 +258,12 @@ const professionalServiceSchema = {
   },
   priceRange: "€€",
   serviceType: [
-    "Tvorba webových stránok",
-    "Web dizajn",
-    "E-shop riešenia",
-    "Webové aplikácie",
-    "SEO optimalizácia",
-    "Digital marketing",
+    "Web Development",
+    "Web Design",
+    "E-shop Solutions",
+    "Web Applications",
+    "SEO Optimization",
+    "Digital Marketing",
   ],
   areaServed: {
     "@type": "Country",
@@ -271,30 +271,30 @@ const professionalServiceSchema = {
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Webové služby",
+    name: "Web Services",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Tvorba webových stránok",
-          description: "Moderné, responzívne webové stránky optimalizované pre všetky zariadenia.",
+          name: "Web Development",
+          description: "Modern, responsive websites optimized for all devices.",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "E-shop riešenia",
-          description: "Komplexné e-commerce riešenia pre online predaj.",
+          name: "E-shop Solutions",
+          description: "Comprehensive e-commerce solutions for online sales.",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Webové aplikácie",
-          description: "Pokročilé webové aplikácie s modernou funkcionalitou.",
+          name: "Web Applications",
+          description: "Advanced web applications with modern functionality.",
         },
       },
     ],
@@ -307,7 +307,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sk" className={`${manrope.variable} ${anton.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${anton.variable}`}>
       <head>
         <Script
           id="organization-schema"
@@ -331,6 +331,11 @@ export default function RootLayout({
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="alternate" hrefLang="sk-SK" href="https://aebdigital.sk" />
+        <link rel="alternate" hrefLang="cs-CZ" href="https://aebdigital.cz" />
+        <link rel="alternate" hrefLang="de-AT" href="https://aebdigital.at" />
+        <link rel="alternate" hrefLang="en-US" href="https://aebdigital.com" />
+        <link rel="alternate" hrefLang="x-default" href="https://aebdigital.com" />
       </head>
       <body className="antialiased">
         <LenisProvider>

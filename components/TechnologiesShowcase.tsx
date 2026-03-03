@@ -16,9 +16,9 @@ export function TechnologiesShowcase() {
             <div className="container">
                 <div className="tech-header text-center mb-16">
                     <span className="section-label inline-block bg-accent-teal text-white px-5 py-2 rounded-full text-sm font-semibold mb-6">
-                        Naše technológie
+                        Our Technologies
                     </span>
-                    <h2 className="text-5xl font-bold text-white">Nástroje, ktoré nám pomáhajú tvoriť zázraky</h2>
+                    <h2 className="text-5xl font-bold text-white">Tools that help us create miracles</h2>
                 </div>
 
                 <div className="tech-visual flex justify-center mb-20">
@@ -63,13 +63,13 @@ export function TechnologiesShowcase() {
                 <div className="tech-categories-modern grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                     <div className="tech-category-card bg-transparent p-8 rounded-xl text-left border-2 border-white/[0.1] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.1] hover:border-accent-teal">
                         <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-4">
-                            <FaCode className="text-accent-teal text-xl" /> Vývoj
+                            <FaCode className="text-accent-teal text-xl" /> Development
                         </h3>
                         <p className="text-white/[0.8] leading-relaxed text-base">React, Vue.js, Node.js, TypeScript, JavaScript, HTML5, CSS3</p>
                     </div>
                     <div className="tech-category-card bg-transparent p-8 rounded-xl text-left border-2 border-white/[0.1] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.1] hover:border-accent-teal">
                         <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-4">
-                            <FaPaintBrush className="text-accent-teal text-xl" /> Dizajn
+                            <FaPaintBrush className="text-accent-teal text-xl" /> Design
                         </h3>
                         <p className="text-white/[0.8] leading-relaxed text-base">Figma, Adobe Photoshop, Adobe Illustrator, Sketch</p>
                     </div>

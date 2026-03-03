@@ -21,14 +21,14 @@ export function ContactForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setFormData((prevData: typeof formData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
   const handleTurnstileVerify = (token: string) => {
-    setFormData((prevData) => ({
+    setFormData((prevData: typeof formData) => ({
       ...prevData,
       turnstileToken: token,
     }));
@@ -52,7 +52,7 @@ export function ContactForm() {
 
     // Basic form validation
     if (!name || !email || !subject || !message) {
-      showMessage('Prosím vyplňte všetky povinné polia.', 'error');
+      showMessage('Please fill in all required fields.', 'error');
       setLoading(false);
       return;
     }
@@ -60,22 +60,22 @@ export function ContactForm() {
     // Email validation
     const emailRegex = /^[^S@]+@[^S@]+\.[^S@]+$/;
     if (!emailRegex.test(email)) {
-      showMessage('Prosím zadajte platný email.', 'error');
+      showMessage('Please enter a valid email.', 'error');
       setLoading(false);
       return;
     }
 
     // Turnstile validation
     if (!turnstileToken) {
-      showMessage('Prosím, potvrďte, že nie ste robot.', 'error');
+      showMessage('Please confirm you are not a robot.', 'error');
       setLoading(false);
       return;
     }
 
     let fullMessage = `${message}\n\n`;
-    if (phone) fullMessage += `Telefón: ${phone}\n`;
-    if (budget) fullMessage += `Rozpočet: ${budget}\n`;
-    fullMessage += `Typ projektu: ${subject}`;
+    if (phone) fullMessage += `Phone: ${phone}\n`;
+    if (budget) fullMessage += `Budget: ${budget}\n`;
+    fullMessage += `Project Type: ${subject}`;
 
     const payload = {
       name: name,
@@ -97,7 +97,7 @@ export function ContactForm() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        showMessage(data.message || 'Ďakujeme! Vaša správa bola úspešne odoslaná.', 'success');
+        showMessage(data.message || 'Thank you! Your message has been sent successfully.', 'success');
         setFormData({
           name: '',
           email: '',
@@ -110,11 +110,11 @@ export function ContactForm() {
         });
         // Reset turnstile here if needed, but the component might handle it
       } else {
-        showMessage(data.error || 'Nastala chyba pri odosielaní správy.', 'error');
+        showMessage(data.error || 'An error occurred while sending the message.', 'error');
       }
     } catch (error) {
       console.error('Error:', error);
-      showMessage('❌ Nastala chyba pri odosielaní správy. Skúste to prosím neskôr alebo nás kontaktujte telefonicky na +421 908 507 131.', 'error');
+      showMessage('❌ An error occurred while sending the message. Please try again later or contact us by phone at +421 908 507 131.', 'error');
     } finally {
       setLoading(false);
     }
@@ -125,13 +125,13 @@ export function ContactForm() {
       <div className="container">
         <div className="contact-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="contact-text">
-            <h2 className="heading-section text-white mb-6 text-left">Máte nápad? Poďme na to!</h2>
-            <p className="text-gray-light mb-8">Máte projekt v hlave? Napíšte nám a my vám vytvoríme riešenie presne na mieru s bezplatnou konzultáciou.</p>
+            <h2 className="heading-section text-white mb-6 text-left">Have an idea? Let's do it!</h2>
+            <p className="text-gray-light mb-8">Do you have a project in mind? Write to us and we will create a custom solution with a free consultation.</p>
 
             <div className="contact-person-box flex items-center bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-[15px] hover:-translate-y-1 transition-transform duration-300">
               <div className="contact-person-info">
                 <h4 className="text-white text-lg font-bold">Peter Samuel Bobák</h4>
-                <p className="text-gray-light text-sm mb-1">Konateľ</p>
+                <p className="text-gray-light text-sm mb-1">CEO</p>
                 <a href="tel:+421908507131" className="text-accent-teal hover:underline text-sm font-bold">+421 908 507 131</a>
               </div>
             </div>
@@ -140,7 +140,7 @@ export function ContactForm() {
           <form id="contact-form" className="contact-form bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[20px]" onSubmit={handleSubmit}>
             {/* Honeypot Field - Invisible to users, visible to bots */}
             <div className="hidden absolute opacity-0 -z-10 h-0 w-0 overflow-hidden">
-              <label htmlFor="website">Webstránka</label>
+              <label htmlFor="website">Website</label>
               <input
                 type="text"
                 id="website"
@@ -152,7 +152,7 @@ export function ContactForm() {
               />
             </div>
             <div className="form-group mb-4">
-              <label htmlFor="name" className="block text-white text-sm font-bold mb-2">Meno *</label>
+              <label htmlFor="name" className="block text-white text-sm font-bold mb-2">Name *</label>
               <input
                 type="text"
                 id="name"
@@ -178,7 +178,7 @@ export function ContactForm() {
             </div>
 
             <div className="form-group mb-4">
-              <label htmlFor="phone" className="block text-white text-sm font-bold mb-2">Telefón</label>
+              <label htmlFor="phone" className="block text-white text-sm font-bold mb-2">Phone</label>
               <input
                 type="tel"
                 id="phone"
@@ -191,7 +191,7 @@ export function ContactForm() {
             </div>
 
             <div className="form-group mb-4">
-              <label htmlFor="subject" className="block text-white text-sm font-bold mb-2">Typ projektu *</label>
+              <label htmlFor="subject" className="block text-white text-sm font-bold mb-2">Project Type *</label>
               <select
                 id="subject"
                 name="subject"
@@ -200,19 +200,19 @@ export function ContactForm() {
                 onChange={handleChange}
                 required
               >
-                <option value="" className="bg-dark-gray">Vyberte typ projektu</option>
-                <option value="webova-stranka" className="bg-dark-gray">Webová stránka</option>
+                <option value="" className="bg-dark-gray">Select project type</option>
+                <option value="website" className="bg-dark-gray">Website</option>
                 <option value="eshop" className="bg-dark-gray">E-shop</option>
-                <option value="webova-aplikacia" className="bg-dark-gray">Webová aplikácia</option>
-                <option value="marketing" className="bg-dark-gray">Digital marketing</option>
-                <option value="dizajn" className="bg-dark-gray">UI/UX dizajn</option>
-                <option value="custom" className="bg-dark-gray">Vývoj na mieru</option>
-                <option value="ine" className="bg-dark-gray">Iné</option>
+                <option value="web-application" className="bg-dark-gray">Web Application</option>
+                <option value="digital-marketing" className="bg-dark-gray">Digital Marketing</option>
+                <option value="ui-ux-design" className="bg-dark-gray">UI/UX Design</option>
+                <option value="custom-development" className="bg-dark-gray">Custom Development</option>
+                <option value="other" className="bg-dark-gray">Other</option>
               </select>
             </div>
 
             <div className="form-group mb-4">
-              <label htmlFor="budget" className="block text-white text-sm font-bold mb-2">Rozpočet</label>
+              <label htmlFor="budget" className="block text-white text-sm font-bold mb-2">Budget</label>
               <select
                 id="budget"
                 name="budget"
@@ -220,22 +220,22 @@ export function ContactForm() {
                 value={formData.budget}
                 onChange={handleChange}
               >
-                <option value="" className="bg-dark-gray">Vyberte rozpočet</option>
-                <option value="do-1000" className="bg-dark-gray">Do 1 000 €</option>
+                <option value="" className="bg-dark-gray">Select budget</option>
+                <option value="under-1000" className="bg-dark-gray">Up to 1 000 €</option>
                 <option value="1000-3000" className="bg-dark-gray">1 000 - 3 000 €</option>
                 <option value="3000-5000" className="bg-dark-gray">3 000 - 5 000 €</option>
                 <option value="5000-10000" className="bg-dark-gray">5 000 - 10 000 €</option>
-                <option value="nad-10000" className="bg-dark-gray">Nad 10 000 €</option>
+                <option value="over-10000" className="bg-dark-gray">Over 10 000 €</option>
               </select>
             </div>
 
             <div className="form-group mb-4">
-              <label htmlFor="message" className="block text-white text-sm font-bold mb-2">Popis projektu *</label>
+              <label htmlFor="message" className="block text-white text-sm font-bold mb-2">Project Description *</label>
               <textarea
                 id="message"
                 name="message"
                 rows={5}
-                placeholder="Opíšte svoj projekt, ciele a požiadavky..."
+                placeholder="Describe your project, goals and requirements..."
                 className="w-full py-3 px-4 text-white bg-[#383a3c] border border-white/20 rounded-[10px] focus:outline-none focus:border-accent-teal transition-colors"
                 value={formData.message}
                 onChange={handleChange}
@@ -257,8 +257,8 @@ export function ContactForm() {
 
             <button type="submit" className="btn btn-primary w-full rounded-none uppercase font-bold tracking-wider hover:-translate-y-1 transition-transform duration-300" disabled={loading}>
               <span className="btn-text-container">
-                <span className="btn-text btn-text-visible">{loading ? <span className="spinner mr-2"></span> : ''} Odoslať správu</span>
-                <span className="btn-text btn-text-hidden">ODOSLAŤ</span>
+                <span className="btn-text btn-text-visible">{loading ? <span className="spinner mr-2"></span> : ''} Send Message</span>
+                <span className="btn-text btn-text-hidden">SEND</span>
               </span>
             </button>
           </form>

@@ -10,7 +10,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 import { getBlogPostBySlug, getAllBlogPostSlugs, getRecommendedPosts } from "@/lib/blog-posts";
 
-const siteUrl = "https://aebdigital.sk";
+const siteUrl = "https://aebdigital.com";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -29,26 +29,26 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     return {};
   }
 
-  // Parse Slovak date to ISO format for article meta tags
-  const parseSkDate = (skDate: string) => {
+  // Parse English date to ISO format for article meta tags
+  const parseEnDate = (enDate: string) => {
     const months: { [key: string]: string } = {
-      "január": "01", "február": "02", "marec": "03", "apríl": "04",
-      "máj": "05", "jún": "06", "júl": "07", "august": "08",
-      "september": "09", "október": "10", "november": "11", "december": "12"
+      "January": "01", "February": "02", "March": "03", "April": "04",
+      "May": "05", "June": "06", "July": "07", "August": "08",
+      "September": "09", "October": "10", "November": "11", "December": "12"
     };
-    const parts = skDate.split(" ");
+    const parts = enDate.split(" ");
     if (parts.length >= 3) {
-      const day = parts[0].replace(".", "").padStart(2, "0");
-      const month = months[parts[1]] || "01";
+      const month = months[parts[0]] || "01";
+      const day = parts[1].replace(",", "").padStart(2, "0");
       const year = parts[2];
       return `${year}-${month}-${day}T00:00:00+01:00`;
     }
     return new Date().toISOString();
   };
 
-  const publishedTime = parseSkDate(post.metadata.datePublished);
+  const publishedTime = parseEnDate(post.metadata.datePublished);
   const modifiedTime = post.metadata.dateModified
-    ? parseSkDate(post.metadata.dateModified)
+    ? parseEnDate(post.metadata.dateModified)
     : publishedTime;
 
   return {
@@ -72,9 +72,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       type: "article",
       publishedTime: publishedTime,
       modifiedTime: modifiedTime,
-      authors: [`${siteUrl}/o-nas`],
+      authors: [`${siteUrl}/about`],
       tags: post.metadata.keywords.split(", "),
-      locale: "sk_SK",
+      locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
@@ -94,16 +94,16 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 function generateBlogPostingSchema(post: ReturnType<typeof getBlogPostBySlug>) {
   if (!post) return null;
 
-  const parseSkDate = (skDate: string) => {
+  const parseEnDate = (enDate: string) => {
     const months: { [key: string]: string } = {
-      "január": "01", "február": "02", "marec": "03", "apríl": "04",
-      "máj": "05", "jún": "06", "júl": "07", "august": "08",
-      "september": "09", "október": "10", "november": "11", "december": "12"
+      "January": "01", "February": "02", "March": "03", "April": "04",
+      "May": "05", "June": "06", "July": "07", "August": "08",
+      "September": "09", "October": "10", "November": "11", "December": "12"
     };
-    const parts = skDate.split(" ");
+    const parts = enDate.split(" ");
     if (parts.length >= 3) {
-      const day = parts[0].replace(".", "").padStart(2, "0");
-      const month = months[parts[1]] || "01";
+      const month = months[parts[0]] || "01";
+      const day = parts[1].replace(",", "").padStart(2, "0");
       const year = parts[2];
       return `${year}-${month}-${day}T00:00:00+01:00`;
     }
@@ -120,11 +120,11 @@ function generateBlogPostingSchema(post: ReturnType<typeof getBlogPostBySlug>) {
     headline: post.metadata.title,
     description: post.metadata.description,
     image: `${siteUrl}${post.metadata.ogImage}`,
-    dateCreated: parseSkDate(post.metadata.datePublished),
-    datePublished: parseSkDate(post.metadata.datePublished),
+    dateCreated: parseEnDate(post.metadata.datePublished),
+    datePublished: parseEnDate(post.metadata.datePublished),
     dateModified: post.metadata.dateModified
-      ? parseSkDate(post.metadata.dateModified)
-      : parseSkDate(post.metadata.datePublished),
+      ? parseEnDate(post.metadata.dateModified)
+      : parseEnDate(post.metadata.datePublished),
     author: {
       "@type": "Organization",
       name: post.metadata.author,
@@ -138,7 +138,7 @@ function generateBlogPostingSchema(post: ReturnType<typeof getBlogPostBySlug>) {
         url: `${siteUrl}/sources/favicon-aeb.png`,
       },
     },
-    inLanguage: "sk-SK",
+    inLanguage: "en-US",
     isFamilyFriendly: true,
     keywords: post.metadata.keywords,
     articleSection: post.metadata.category,
@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Blog Recommendations Section - Sticky */}
           <aside className="blog-recommendations lg:col-span-1">
             <div className="lg:sticky lg:top-24">
-              <h3 className="text-2xl font-bold mb-6 text-white">Ďalšie články</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white">More Articles</h3>
               <div className="recommendation-list space-y-8">
                 {recommendations && recommendations.map((rec, index) => (
                   <div key={index} className="recommendation-item p-4 bg-white/[0.05] rounded-xl border border-white/[0.1] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.1]">

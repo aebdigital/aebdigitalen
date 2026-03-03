@@ -307,57 +307,57 @@ export default function Home() {
   const portfolioItems = [
     {
       imgSrc: "/sources/aeb-portfolio/kovosklo.webp",
-      alt: "Kovovýroba",
-      category: "Kovovýroba",
-      subheading: "Moderné webové riešenia pre kovovýrobné firmy",
+      alt: "Metalworks",
+      category: "Metalworks",
+      subheading: "Modern web solutions for metalworking companies",
     },
     {
       imgSrc: "/sources/aeb-portfolio/stolarstvo.webp",
-      alt: "Stolárstvo",
-      category: "Stolárstvo",
-      subheading: "Prezentujte svoje stolárske výrobky online",
+      alt: "Carpentry",
+      category: "Carpentry",
+      subheading: "Showcase your carpentry products online",
     },
     {
       imgSrc: "/sources/aeb-portfolio/raving.sk.webp",
-      alt: "Stavebníctvo",
-      category: "Stavebníctvo",
-      subheading: "Profesionálne weby pre stavebné spoločnosti",
+      alt: "Construction",
+      category: "Construction",
+      subheading: "Professional websites for construction companies",
     },
     {
       imgSrc: "/sources/aeb-portfolio/110.webp",
-      alt: "Zdravotníctvo",
-      category: "Zdravotníctvo",
-      subheading: "Digitálne riešenia pre zdravotnícke zariadenia",
+      alt: "Healthcare",
+      category: "Healthcare",
+      subheading: "Digital solutions for healthcare facilities",
     },
     {
       imgSrc: "/sources/aeb-portfolio/120.webp",
-      alt: "Autobazáre",
-      category: "Autobazáre",
-      subheading: "E-shopy a katalógy pre predaj vozidiel",
+      alt: "Car Dealerships",
+      category: "Car Dealerships",
+      subheading: "E-shops and catalogs for vehicle sales",
     },
     {
       imgSrc: "/sources/aeb-portfolio/70.webp",
-      alt: "Poľnohospodárstvo",
-      category: "Poľnohospodárstvo",
-      subheading: "Webové stránky pre poľnohospodárske firmy",
+      alt: "Agriculture",
+      category: "Agriculture",
+      subheading: "Websites for agricultural companies",
     },
     {
       imgSrc: "/sources/aeb-portfolio/lerent.webp",
-      alt: "Autopožičovne",
-      category: "Autopožičovne",
-      subheading: "Rezervačné systémy a prezentácie vozidiel",
+      alt: "Car Rentals",
+      category: "Car Rentals",
+      subheading: "Booking systems and vehicle presentations",
     },
     {
       imgSrc: "/sources/aeb-portfolio/10.webp",
       alt: "Fashion",
       category: "Fashion",
-      subheading: "E-commerce riešenia pre módny priemysel",
+      subheading: "E-commerce solutions for the fashion industry",
     },
     {
       imgSrc: "/sources/aeb-portfolio/Screenshot 2025-12-05 at 19.20.50.webp",
-      alt: "Advokátske kancelárie",
-      category: "Advokátske kancelárie",
-      subheading: "Profesionálne weby pre právnické služby",
+      alt: "Law Firms",
+      category: "Law Firms",
+      subheading: "Professional websites for legal services",
     },
   ];
 
@@ -373,7 +373,7 @@ export default function Home() {
           <div className="corner corner-tr absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-white"></div>
           <div className="corner corner-bl absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-white"></div>
           <div className="corner corner-br absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-white"></div>
-          <span className="text-white font-bold tracking-widest text-xl font-[family-name:var(--font-manrope)]">VIAC</span>
+          <span className="text-white font-bold tracking-widest text-xl font-[family-name:var(--font-manrope)]">MORE</span>
         </div>
       </div>
 
@@ -391,18 +391,18 @@ export default function Home() {
         <div className="container relative z-30 text-left">
           <div className="hero-content text-white max-w-4xl">
             <h1 className="heading-large text-left mb-8 md:mb-6">
-              Tvoríme digitálne riešenia pre váš úspech
+              We Create Digital Solutions for Your Success
             </h1>
 
             <p className="subheading text-left max-w-2xl mr-auto text-white mb-10 md:mb-12">
-              Od kreatívneho dizajnu po technické riešenia - všetko pod jednou strechou
+              From creative design to technical solutions - everything under one roof
             </p>
 
             <div className="hero-buttons flex justify-start space-x-4 mt-12 md:mt-10">
               <Link href="/portfolio" className="btn btn-secondary">
                 <span className="btn-text-container">
-                  <span className="btn-text btn-text-visible">Portfólio</span>
-                  <span className="btn-text btn-text-hidden">VIAC</span>
+                  <span className="btn-text btn-text-visible">Portfolio</span>
+                  <span className="btn-text btn-text-hidden">MORE</span>
                 </span>
               </Link>
             </div>
@@ -412,7 +412,7 @@ export default function Home() {
           <section className="photo-sliders absolute inset-x-0 bottom-[-140px] md:bottom-[-180px] w-full overflow-hidden z-30">
             <div className="container pt-8">
               <div className="trust-text text-center mb-2 md:mb-4">
-                <p className="text-gray-light text-sm md:text-lg">Dôveruje nám 120+ slovenských firiem</p>
+                <p className="text-gray-light text-sm md:text-lg">Trusted by 120+ companies</p>
               </div>
             </div>
             {/* Row 1 - Moving Right */}
@@ -431,7 +431,7 @@ export default function Home() {
       {/* Portfolio Gallery Section */}
       <section id="portfolio" className="portfolio-gallery-section relative z-40 pt-8 pb-20">
         <div className="container">
-          <h2 className="heading-section text-left mb-12">Pracovali sme so všetkými</h2>
+          <h2 className="heading-section text-left mb-12">We have worked with everyone</h2>
 
           <div className="gallery-container">
             <div className="gallery-columns grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -463,33 +463,33 @@ export default function Home() {
           <div className="service-text-column flex-1 flex flex-col">
             {[
               {
-                title: "Webové stránky",
-                description: "Tvoríme moderné, responzívne webové stránky optimalizované pre všetky zariadenia. Naše weby sú rýchle, SEO optimalizované a navrhnuté s ohľadom na používateľskú skúsenosť.",
-                features: ["Responzívny dizajn", "SEO optimalizácia", "Rýchle načítanie", "Moderné technológie"],
+                title: "Websites",
+                description: "We create modern, responsive websites optimized for all devices. Our websites are fast, SEO optimized and designed with user experience in mind.",
+                features: ["Responsive design", "SEO optimization", "Fast loading", "Modern technologies"],
                 link: "#contact"
               },
               {
-                title: "Aplikácie",
-                description: "Vyvíjame pokročilé webové aplikácie s modernou funkcionalitou. Používame najnovšie technológie ako React, Node.js a TypeScript pre vytvorenie robustných riešení.",
-                features: ["React & Vue.js", "Node.js backend", "Real-time funkcionalita", "API integrácie"],
+                title: "Applications",
+                description: "We develop advanced web applications with modern functionality. We use the latest technologies like React, Node.js and TypeScript to create robust solutions.",
+                features: ["React & Vue.js", "Node.js backend", "Real-time functionality", "API integrations"],
                 link: "#contact"
               },
               {
-                title: "E-shopy",
-                description: "Vytvárame komplexné e-commerce riešenia, ktoré zvýšia vaše predaje. Od dizajnu po platobné brány a správu objednávok - všetko na jednom mieste.",
-                features: ["WooCommerce & Shopify", "Platobné brány", "Správa skladov", "Analytics a reporting"],
+                title: "E-shops",
+                description: "We create comprehensive e-commerce solutions that increase your sales. From design to payment gateways and order management - everything in one place.",
+                features: ["WooCommerce & Shopify", "Payment gateways", "Inventory management", "Analytics & reporting"],
                 link: "#contact"
               },
               {
                 title: "Social Media",
-                description: "Pomáhame vašej značke rásť online. Spravujeme sociálne médiá, vytvárame obsah a realizujeme reklamné kampane, ktoré prinášajú výsledky.",
-                features: ["Správa sociálnych médií", "Instagram & Facebook kampane", "Tvorba obsahu", "Influencer marketing"],
+                description: "We help your brand grow online. We manage social media, create content and run advertising campaigns that deliver results.",
+                features: ["Social media management", "Instagram & Facebook campaigns", "Content creation", "Influencer marketing"],
                 link: "#contact"
               },
               {
                 title: "Email Marketing",
-                description: "Vytvárame efektívne email kampane, ktoré budujú vzťahy s vašimi zákazníkmi a zvyšujú konverzie. Od newslettrov po automatizované sekvencie.",
-                features: ["Newsletter kampane", "Email automatizácia", "A/B testovanie", "Analytics a reporting"],
+                description: "We create effective email campaigns that build relationships with your customers and increase conversions. From newsletters to automated sequences.",
+                features: ["Newsletter campaigns", "Email automation", "A/B testing", "Analytics & reporting"],
                 link: "#contact"
               },
             ].map((service, index) => (
@@ -499,8 +499,8 @@ export default function Home() {
                   <p className="text-gray-light mb-10">{service.description}</p>
                   <Link href={service.link} className="btn btn-primary">
                     <span className="btn-text-container">
-                      <span className="btn-text btn-text-visible">Získať ponuku</span>
-                      <span className="btn-text btn-text-hidden">VIAC</span>
+                      <span className="btn-text btn-text-visible">Get a Quote</span>
+                      <span className="btn-text btn-text-hidden">MORE</span>
                     </span>
                   </Link>
                 </div>
@@ -533,37 +533,37 @@ export default function Home() {
         <div className="w-full flex flex-col lg:hidden">
           {[
             {
-              title: "Webové stránky",
-              description: "Tvoríme moderné, responzívne webové stránky optimalizované pre všetky zariadenia. Naše weby sú rýchle, SEO optimalizované a navrhnuté s ohľadom na používateľskú skúsenosť.",
-              features: ["Responzívny dizajn", "SEO optimalizácia", "Rýchle načítanie", "Moderné technológie"],
+              title: "Websites",
+              description: "We create modern, responsive websites optimized for all devices. Our websites are fast, SEO optimized and designed with user experience in mind.",
+              features: ["Responsive design", "SEO optimization", "Fast loading", "Modern technologies"],
               link: "#contact",
               image: { src: "/sources/web-design.webp", alt: "Web Development" }
             },
             {
-              title: "Aplikácie",
-              description: "Vyvíjame pokročilé webové aplikácie s modernou funkcionalitou. Používame najnovšie technológie ako React, Node.js a TypeScript pre vytvorenie robustných riešení.",
-              features: ["React & Vue.js", "Node.js backend", "Real-time funkcionalita", "API integrácie"],
+              title: "Applications",
+              description: "We develop advanced web applications with modern functionality. We use the latest technologies like React, Node.js and TypeScript to create robust solutions.",
+              features: ["React & Vue.js", "Node.js backend", "Real-time functionality", "API integrations"],
               link: "#contact",
               image: { src: "/sources/services/aplikacie.webp", alt: "Web Applications" }
             },
             {
-              title: "E-shopy",
-              description: "Vytvárame komplexné e-commerce riešenia, ktoré zvýšia vaše predaje. Od dizajnu po platobné brány a správu objednávok - všetko na jednom mieste.",
-              features: ["WooCommerce & Shopify", "Platobné brány", "Správa skladov", "Analytics a reporting"],
+              title: "E-shops",
+              description: "We create comprehensive e-commerce solutions that increase your sales. From design to payment gateways and order management - everything in one place.",
+              features: ["WooCommerce & Shopify", "Payment gateways", "Inventory management", "Analytics & reporting"],
               link: "#contact",
               image: { src: "/sources/Gemini_Generated_Image_lxz7dglxz7dglxz7.webp", alt: "E-commerce" }
             },
             {
               title: "Social Media",
-              description: "Pomáhame vašej značke rásť online. Spravujeme sociálne médiá, vytvárame obsah a realizujeme reklamné kampane, ktoré prinášajú výsledky.",
-              features: ["Správa sociálnych médií", "Instagram & Facebook kampane", "Tvorba obsahu", "Influencer marketing"],
+              description: "We help your brand grow online. We manage social media, create content and run advertising campaigns that deliver results.",
+              features: ["Social media management", "Instagram & Facebook campaigns", "Content creation", "Influencer marketing"],
               link: "#contact",
               image: { src: "/sources/social-media.webp", alt: "Social Media Marketing" }
             },
             {
               title: "Email Marketing",
-              description: "Vytvárame efektívne email kampane, ktoré budujú vzťahy s vašimi zákazníkmi a zvyšujú konverzie. Od newslettrov po automatizované sekvencie.",
-              features: ["Newsletter kampane", "Email automatizácia", "A/B testovanie", "Analytics a reporting"],
+              description: "We create effective email campaigns that build relationships with your customers and increase conversions. From newsletters to automated sequences.",
+              features: ["Newsletter campaigns", "Email automation", "A/B testing", "Analytics & reporting"],
               link: "#contact",
               image: { src: "/sources/email-market.webp", alt: "Email Marketing" }
             },
@@ -580,8 +580,8 @@ export default function Home() {
                   <p className="text-gray-light mb-6">{service.description}</p>
                   <Link href={service.link} className="btn btn-primary mx-auto">
                     <span className="btn-text-container">
-                      <span className="btn-text btn-text-visible">Získať ponuku</span>
-                      <span className="btn-text btn-text-hidden">VIAC</span>
+                      <span className="btn-text btn-text-visible">Get a Quote</span>
+                      <span className="btn-text btn-text-hidden">MORE</span>
                     </span>
                   </Link>
                 </div>
@@ -604,15 +604,15 @@ export default function Home() {
           <div className="stats-grid grid grid-cols-1 md:grid-cols-3 gap-0 text-center">
             <div className="stat-box stat-box-animate backdrop-blur-sm bg-white/5 p-8 rounded-none border border-white/10 hover:-translate-y-1 transition-transform duration-300">
               <div className="stat-number text-5xl font-bold text-accent-teal mb-2">120+</div>
-              <div className="stat-label text-gray-light text-lg">Úspešných projektov</div>
+              <div className="stat-label text-gray-light text-lg">Successful Projects</div>
             </div>
             <div className="stat-box stat-box-animate backdrop-blur-sm bg-white/5 p-8 rounded-none border border-white/10 hover:-translate-y-1 transition-transform duration-300">
               <div className="stat-number text-5xl font-bold text-accent-teal mb-2">5+</div>
-              <div className="stat-label text-gray-light text-lg">Rokov skúseností</div>
+              <div className="stat-label text-gray-light text-lg">Years of Experience</div>
             </div>
             <div className="stat-box stat-box-animate backdrop-blur-sm bg-white/5 p-8 rounded-none border border-white/10 hover:-translate-y-1 transition-transform duration-300">
               <div className="stat-number text-5xl font-bold text-accent-teal mb-2">99%</div>
-              <div className="stat-label text-gray-light text-lg">Spokojnosť</div>
+              <div className="stat-label text-gray-light text-lg">Satisfaction</div>
             </div>
           </div>
         </div>

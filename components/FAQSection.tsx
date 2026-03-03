@@ -10,64 +10,64 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "Ako dlho trvá vytvorenie webovej stránky?",
-    answer: "Doba realizácie závisí od zložitosti projektu. Jednoduchá prezentačná stránka sa dá dokončiť za 1-2 týždne, zatiaľ čo komplexný e-shop alebo webová aplikácia môže trvať 4-8 týždňov. Po prvej konzultácii vám poskytneme presný časový harmonogram."
+    question: "How long does it take to create a website?",
+    answer: "The turnaround time depends on the complexity of the project. A simple presentation website can be completed in 1-2 weeks, while a complex e-shop or web application may take 4-8 weeks. After the initial consultation, we will provide you with an exact timeline."
   },
   {
-    question: "Koľko stojí vytvorenie webovej stránky?",
-    answer: "Ceny sa pohybujú od 500€ za jednoduchú prezentačnú stránku až po 5000€+ za komplexné e-commerce riešenia. Finálna cena závisí od funkcionality, dizajnu a požiadaviek. Poskytujeme transparentnú cenovú ponuku po analýze vašich potrieb."
+    question: "How much does a website cost?",
+    answer: "Prices range from €500 for a simple presentation website to €5000+ for complex e-commerce solutions. The final price depends on functionality, design, and requirements. We provide a transparent price quote after analyzing your needs."
   },
   {
-    question: "Zabezpečujete aj údržbu a podporu?",
-    answer: "Áno, ponúkame kompletné služby údržby a technickej podpory. To zahŕňa aktualizácie obsahu, bezpečnostné záplaty, zálohovanie dát a riešenie technických problémov. Môžete si vybrať z rôznych balíčkov podľa vašich potrieb."
+    question: "Do you also provide maintenance and support?",
+    answer: "Yes, we offer complete maintenance and technical support services. This includes content updates, security patches, data backups, and technical troubleshooting. You can choose from various packages according to your needs."
   },
   {
-    question: "Budeme môcť sami upravovať obsah stránky?",
-    answer: "Samozrejme! Vytvárame stránky s užívateľsky prívetivým CMS (Content Management System), ktorý vám umožní jednoducho pridávať a upravovať obsah bez technických znalostí. Poskytneme vám aj školenie a dokumentáciu."
+    question: "Will we be able to edit the website content ourselves?",
+    answer: "Of course! We build websites with a user-friendly CMS (Content Management System) that allows you to easily add and edit content without technical knowledge. We also provide training and documentation."
   },
   {
-    question: "Sú vaše webstránky optimalizované pre mobily?",
-    answer: "Všetky naše webstránky sú responsívne, čo znamená, že sa automaticky prispôsobia akémukoľvek zariadeniu - či už je to mobil, tablet alebo počítač. Používame mobile-first prístup pre optimálny používateľský zážitok."
+    question: "Are your websites optimized for mobile devices?",
+    answer: "All our websites are responsive, meaning they automatically adapt to any device - whether it's a mobile, tablet, or computer. We use a mobile-first approach for optimal user experience."
   },
   {
-    question: "Pomôžete aj s digital marketingom?",
-    answer: "Áno, ponúkame komplexné digital marketing služby vrátane SEO optimalizácie, správy sociálnych médií, PPC kampaní a email marketingu. Pomôžeme vám nielen vytvoriť skvělú stránku, ale aj prilákať na ňu návštevníkov."
+    question: "Do you also help with digital marketing?",
+    answer: "Yes, we offer comprehensive digital marketing services including SEO optimization, social media management, PPC campaigns, and email marketing. We help you not only create a great website but also attract visitors to it."
   },
   {
-    question: "Aký je postup pri tvorbe webovej stránky?",
-    answer: "Náš proces zahŕňa 4 kroky: 1) Bezplatnú konzultáciu a analýzu potrieb, 2) Vytvorenie wireframov a dizajnu, 3) Programovanie a testovanie, 4) Spustenie a školenie. Každý krok zahŕňa vašu spätnú väzbu."
+    question: "What is the process of creating a website?",
+    answer: "Our process involves 4 steps: 1) Free consultation and needs analysis, 2) Creation of wireframes and design, 3) Programming and testing, 4) Launch and training. Each step includes your feedback."
   },
   {
-    question: "Poskytujete záruky na vašu prácu?",
-    answer: "Áno, poskytujeme 12-mesačnú záruku na všetky naše webové riešenia. Záruka pokrýva technické chyby, kompatibilitu s prehliadačmi a základnú funkčnosť. Malé úpravy a opravy sú v priebehu záručnej doby bezplatné."
+    question: "Do you provide guarantees for your work?",
+    answer: "Yes, we provide a 12-month warranty on all our web solutions. The warranty covers technical errors, browser compatibility, and basic functionality. Minor adjustments and fixes are free during the warranty period."
   },
   {
-    question: "Dokážete migrovať existujúcu stránku?",
-    answer: "Samozrejme! Zabezpečíme kompletnú migráciu vašich dát, obsahu a SEO nastavení z pôvodnej stránky. Proces je navrhnutý tak, aby neovplyvnil vašu návštevnosť ani pozície vo vyhľadávačoch."
+    question: "Can you migrate an existing website?",
+    answer: "Of course! We will ensure a complete migration of your data, content, and SEO settings from the original site. The process is designed not to affect your traffic or search engine rankings."
   },
   {
-    question: "Môžem si objednať len dizajn bez programovania?",
-    answer: "Áno, ponúkame aj samostatné dizajnové služby. Vytvoríme pre vás kompletné UI/UX dizajny vo Figme spolu s prototypmi a grafickými podkladmi pre ďalšiu realizáciu."
+    question: "Can I order just the design without programming?",
+    answer: "Yes, we also offer standalone design services. We will create complete UI/UX designs for you in Figma together with prototypes and graphic assets for further implementation."
   },
   {
-    question: "Aké platobné metódy akceptujete?",
-    answer: "Akceptujeme bankové prevody, platby kartou a PayPal. Väčšie projekty rozdeľujeme na čiastkové platby - zvyčajne 50% na začiatku a 50% po dokončení. Pre dlhodobé projekty je možná mesačná fakturácia."
+    question: "What payment methods do you accept?",
+    answer: "We accept bank transfers, card payments, and PayPal. Larger projects are split into partial payments - usually 50% at the beginning and 50% upon completion. Monthly invoicing is possible for long-term projects."
   },
   {
-    question: "Vytvárate aj mobilné aplikácie?",
-    answer: "Špecializujeme sa na webové aplikácie, ktoré fungujú perfektne na mobiloch ako PWA (Progressive Web Apps). Pre natívne mobilné aplikácie máme partnerské spoločnosti, s ktorými úzko spolupracujeme."
+    question: "Do you also create mobile applications?",
+    answer: "We specialize in web applications that work perfectly on mobiles as PWAs (Progressive Web Apps). For native mobile applications, we have partner companies with whom we work closely."
   },
   {
-    question: "Aké technológie používate?",
-    answer: "Používame moderné technológie ako React, Vue.js, Node.js, TypeScript a WordPress. Pre dizajn pracujeme s Figma a Adobe Creative Suite. Výber technológií vždy prispôsobujeme potrebám projektu."
+    question: "What technologies do you use?",
+    answer: "We use modern technologies like React, Vue.js, Node.js, TypeScript, and WordPress. For design, we work with Figma and Adobe Creative Suite. We always adapt the choice of technologies to the project needs."
   },
   {
-    question: "Pomôžete s obsahom a copywritingom?",
-    answer: "Áno, máme skúsených copywriterov, ktorí vám pomôžu s tvorbou kvalitného obsahu optimalizovaného pre SEO. Pomôžeme s textami, produktovými popismi a marketingovými materiálmi."
+    question: "Do you help with content and copywriting?",
+    answer: "Yes, we have experienced copywriters who will help you create high-quality content optimized for SEO. We help with texts, product descriptions, and marketing materials."
   },
   {
-    question: "Aká je vaša dostupnosť pre urgentné problémy?",
-    answer: "Pre kritické problémy máme technickú podporu od 9 hodín ráno do 10 hodín večer. Štandardná odozva je do 2 hodín v pracovné dni a do 24 hodín cez víkendy. Urgentné opravy riešime prioritne."
+    question: "What is your availability for urgent issues?",
+    answer: "For critical issues, we have technical support from 9 AM to 10 PM. Standard response time is within 2 hours on business days and within 24 hours on weekends. We resolve urgent repairs with priority."
   },
 ];
 
@@ -81,7 +81,7 @@ export function FAQSection() {
   return (
     <section className="faq-section py-20 text-white relative z-40">
       <div className="container">
-        <h2 className="heading-section text-left mb-12">Často kladené otázky</h2>
+        <h2 className="heading-section text-left mb-12">Frequently Asked Questions</h2>
         <div className="faq-layout grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="faq-grid lg:col-span-2">
             {faqData.map((item, index) => (
@@ -94,22 +94,21 @@ export function FAQSection() {
                   <span className={`faq-toggle text-2xl font-light transition-transform duration-300 ${openIndex === index ? 'rotate-45 text-accent-teal' : ''}`}>+</span>
                 </div>
                 <div
-                  className={`faq-answer overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === index ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'
-                  }`}
+                  className={`faq-answer overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+                    }`}
                 >
                   <p className="text-gray-light pl-4 pr-8 py-2 leading-relaxed">{item.answer}</p>
                 </div>
               </div>
             ))}
           </div>
-          
+
           <div className="faq-contact-box p-8 flex flex-col justify-center items-center text-center sticky top-20 self-start hidden lg:flex">
-            <h3 className="text-3xl font-bold font-heading mb-6">Prvá konzultácia a návrh sú zadarmo!</h3>
-            <Link href="/kontakt" className="btn btn-primary">
+            <h3 className="text-3xl font-bold font-heading mb-6">First consultation and proposal are free!</h3>
+            <Link href="/contact" className="btn btn-primary">
               <span className="btn-text-container">
-                <span className="btn-text btn-text-visible">Kontakt</span>
-                <span className="btn-text btn-text-hidden">VIAC</span>
+                <span className="btn-text btn-text-visible">Contact</span>
+                <span className="btn-text btn-text-hidden">MORE</span>
               </span>
             </Link>
           </div>

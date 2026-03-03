@@ -7,23 +7,23 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kontakt - Bezplatná konzultácia a cenová ponuka | AEB Digital Bratislava",
-  description: "Kontaktujte AEB Digital pre bezplatnú konzultáciu! Telefón: +421 908 507 131, Email: peter@aebdig.com. Cenová ponuka na tvorbu webu do 24 hodín. Sídlo v Bratislave.",
+  title: "Contact - Free Consultation and Price Quote | AEB Digital Bratislava",
+  description: "Contact AEB Digital for a free consultation! Phone: +421 908 507 131, Email: peter@aebdig.com. Price quote for web development within 24 hours. Based in Bratislava.",
   keywords: [
-    "kontakt AEB Digital",
-    "webová agentúra Bratislava",
-    "bezplatná konzultácia web",
-    "cenová ponuka webová stránka",
-    "tvorba webu kontakt",
-    "digitálna agentúra kontakt",
+    "contact AEB Digital",
+    "web agency Bratislava",
+    "free web consultation",
+    "website price quote",
+    "web development contact",
+    "digital agency contact",
   ],
   alternates: {
-    canonical: "https://aebdigital.sk/kontakt",
+    canonical: "https://aebdigital.com/contact",
   },
   openGraph: {
-    title: "Kontakt - Bezplatná konzultácia | AEB Digital",
-    description: "Kontaktujte nás pre bezplatnú konzultáciu. Telefón: +421 908 507 131. Cenová ponuka do 24 hodín!",
-    url: "https://aebdigital.sk/kontakt",
+    title: "Contact - Free Consultation | AEB Digital",
+    description: "Contact us for a free consultation. Phone: +421 908 507 131. Price quote within 24 hours!",
+    url: "https://aebdigital.com/contact",
     type: "website",
   },
 };
@@ -36,7 +36,7 @@ export default function KontaktPage() {
       {/* Page Header */}
       <section className="page-header py-32 bg-custom-bg text-white">
         <div className="container">
-          <h1 className="page-title">Kontaktujte nás</h1>
+          <h1 className="page-title">Contact Us</h1>
         </div>
       </section>
 

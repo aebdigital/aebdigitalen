@@ -8,24 +8,24 @@ import { FaRocket, FaHeart, FaHandshake, FaAward } from 'react-icons/fa';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "O nás - Tím webových expertov | AEB Digital Bratislava",
-  description: "Spoznajte tím AEB Digital - webovú agentúru z Bratislavy s 5+ rokmi skúseností. 120+ úspešných projektov, moderné technológie, individuálny prístup. Váš partner pre digitálnu transformáciu.",
+  title: "About Us - Team of Web Experts | AEB Digital Bratislava",
+  description: "Meet the AEB Digital team - a web agency from Bratislava with 5+ years of experience. 120+ successful projects, modern technologies, individual approach. Your partner for digital transformation.",
   keywords: [
-    "AEB Digital tím",
-    "webová agentúra Bratislava",
-    "o nás",
-    "web development tím",
-    "digitálna agentúra Slovensko",
-    "webový dizajnéri",
-    "vývojári Bratislava",
+    "AEB Digital team",
+    "web agency Bratislava",
+    "about us",
+    "web development team",
+    "digital agency",
+    "web designers",
+    "developers Bratislava",
   ],
   alternates: {
-    canonical: "https://aebdigital.sk/o-nas",
+    canonical: "https://aebdigital.com/about",
   },
   openGraph: {
-    title: "O nás - Tím webových expertov | AEB Digital",
-    description: "Spoznajte tím AEB Digital - webovú agentúru z Bratislavy s 5+ rokmi skúseností a 120+ úspešnými projektmi.",
-    url: "https://aebdigital.sk/o-nas",
+    title: "About Us - Team of Web Experts | AEB Digital",
+    description: "Meet the AEB Digital team - a web agency from Bratislava with 5+ years of experience and 120+ successful projects.",
+    url: "https://aebdigital.com/about",
     type: "website",
   },
 };
@@ -60,10 +60,10 @@ function StorySection({ label, title, leadText, paragraph, imageSrc, imageAlt, r
 
 function ValuesGrid() {
   const values = [
-    { icon: <FaRocket />, title: "Inovácia", description: "Používame najnovšie technológie a trendy pre vytvorenie moderných riešení, ktoré vás posunú dopredu." },
-    { icon: <FaHeart />, title: "Vášeň pre detail", description: "Každý pixel, každý riadok kódu a každá interakcia sú premyslené a dokonale vytvorené." },
-    { icon: <FaHandshake />, title: "Partnerstvo", description: "Nie sme len dodávateľ - sme váš partner na ceste k digitálnemu úspechu." },
-    { icon: <FaAward />, title: "Kvalita", description: "100% spokojnosť klientov nie je náhoda - je výsledkom našej práce a záväzku." },
+    { icon: <FaRocket />, title: "Innovation", description: "We use the latest technologies and trends to create modern solutions that move you forward." },
+    { icon: <FaHeart />, title: "Passion for Detail", description: "Every pixel, every line of code and every interaction are thoughtfully and perfectly crafted." },
+    { icon: <FaHandshake />, title: "Partnership", description: "We are not just a vendor - we are your partner on the path to digital success." },
+    { icon: <FaAward />, title: "Quality", description: "100% client satisfaction is not a coincidence - it is the result of our work and commitment." },
   ];
 
   return (
@@ -91,7 +91,7 @@ export default function AboutUsPage() {
       {/* Page Header */}
       <section className="page-header py-20 text-white relative z-10">
         <div className="container">
-          <h1 className="page-title">O AEB Digital</h1>
+          <h1 className="page-title">About AEB Digital</h1>
         </div>
       </section>
 
@@ -100,20 +100,20 @@ export default function AboutUsPage() {
         <div className="container">
           <div className="about-layout">
             <StorySection
-              label="Náš príbeh"
-              title="Tvoríme digitálne zážitky, ktoré inšpirujú"
-              leadText="Sme mladý, dynamický tím s viac ako 5-ročnými skúsenosťami v oblasti digitálnych technológií. Začínali sme ako malá agentúra s veľkými snami."
-              paragraph="Dnes máme za sebou 120+ spokojných klientov a pokračujeme v inšpirovaní ďalších po celom Slovensku. Každý projekt riešime s individuálnym prístupom a dôrazom na detail."
+              label="Our Story"
+              title="We create digital experiences that inspire"
+              leadText="We are a young, dynamic team with more than 5 years of experience in digital technologies. We started as a small agency with big dreams."
+              paragraph="Today we have 120+ satisfied clients behind us and continue to inspire others. We approach every project with an individual approach and attention to detail."
               imageSrc="/sources/aeb-portfolio/30.webp"
-              imageAlt="AEB Digital práca"
+              imageAlt="AEB Digital work"
             />
             <StorySection
-              label="Naša filozofia"
-              title="Kvalita a inovácie na prvom mieste"
-              leadText="Veríme, že každý projekt je jedinečný a zaslúži si individuálny prístup. Používame najnovšie technológie a trendy, ale nikdy nezabudneme na základné princípy kvalitnej práce."
-              paragraph="Naším cieľom nie je len vytvoriť funkčné riešenie, ale pomôcť vašej firme dosiahnuť skutočný úspech v digitálnom svete."
+              label="Our Philosophy"
+              title="Quality and innovation come first"
+              leadText="We believe that every project is unique and deserves an individual approach. We use the latest technologies and trends, but never forget the fundamental principles of quality work."
+              paragraph="Our goal is not just to create a functional solution, but to help your company achieve real success in the digital world."
               imageSrc="/sources/aeb-portfolio/80.webp"
-              imageAlt="Digitálne riešenia"
+              imageAlt="Digital solutions"
               reverse
             />
           </div>

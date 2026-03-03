@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import Image from "next/image";
 
 // Pages that should NOT show the contact sections (they have their own)
-const excludedPages = ["/o-nas", "/kontakt"];
+const excludedPages = ["/about", "/contact"];
 
 // Page prefixes that should be excluded (e.g., /blog/slug pages have their own sections)
 const excludedPrefixes = ["/blog/"];

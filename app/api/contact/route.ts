@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: true,
-          message: 'Ďakujeme! Vaša správa bola úspešne odoslaná.',
+          message: 'Thank you! Your message has been sent successfully.',
         },
         { status: 200, headers }
       );
@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
     if (!turnstileToken) {
       return NextResponse.json(
         {
-          error: 'Chýba CAPTCHA overenie.',
+          error: 'CAPTCHA verification missing.',
           details: 'Turnstile token is missing.',
         },
         { status: 400, headers }
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
     if (!isHuman) {
       return NextResponse.json(
         {
-          error: 'Neúspešné CAPTCHA overenie. Skúste to prosím znova.',
+          error: 'CAPTCHA verification failed. Please try again.',
           details: 'Turnstile verification failed.',
         },
         { status: 400, headers }
@@ -97,26 +97,26 @@ export async function POST(request: NextRequest) {
     let budget = '';
     let subject = '';
 
-    const phoneMatch = message.match(/Telefón:\s*(.+)/);
-    const budgetMatch = message.match(/Rozpočet:\s*(.+)/);
-    const subjectMatch = message.match(/Typ projektu:\s*(.+)/);
+    const phoneMatch = message.match(/Phone:\s*(.+)/);
+    const budgetMatch = message.match(/Budget:\s*(.+)/);
+    const subjectMatch = message.match(/Project Type:\s*(.+)/);
 
     if (phoneMatch) phone = phoneMatch[1].trim();
     if (budgetMatch) budget = budgetMatch[1].trim();
     if (subjectMatch) subject = subjectMatch[1].trim();
 
     cleanMessage = message
-      .replace(/\n\nTelefón:.*/, '')
-      .replace(/Telefón:.*\n?/, '')
-      .replace(/Rozpočet:.*\n?/, '')
-      .replace(/Typ projektu:.*\n?/, '')
+      .replace(/\n\nPhone:.*/, '')
+      .replace(/Phone:.*\n?/, '')
+      .replace(/Budget:.*\n?/, '')
+      .replace(/Project Type:.*\n?/, '')
       .trim();
 
     // Validate required fields
     if (!name || !email || !cleanMessage) {
       return NextResponse.json(
         {
-          error: 'Všetky polia sú povinné.',
+          error: 'All fields are required.',
           details: 'Name, email, and message are required fields.',
         },
         { status: 400, headers }
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         {
-          error: 'Neplatná emailová adresa.',
+          error: 'Invalid email address.',
           details: 'Invalid email format.',
         },
         { status: 400, headers }
@@ -143,7 +143,7 @@ export async function POST(request: NextRequest) {
       console.error('SMTP2GO environment variables not configured.');
       return NextResponse.json(
         {
-          error: 'Konfiguračná chyba servera. Prosím, kontaktujte administrátora.',
+          error: 'Server configuration error. Please contact the administrator.',
           details: 'Email service environment variables are not set.',
         },
         { status: 500, headers }
@@ -154,20 +154,23 @@ export async function POST(request: NextRequest) {
       api_key: SMTP2GO_API_KEY,
       to: [BUSINESS_EMAIL],
       sender: SMTP2GO_FROM_EMAIL,
-      subject: `Nová správa z kontaktného formulára - ${name}`,
+      subject: `New message from contact form - ${name}`,
       text_body: `
-Nová správa z kontaktného formulára AEB Digital
+New message from AEB Digital contact form
 
-Od: ${name}
+From: ${name}
 Email: ${email}
+${phone ? `Phone: ${phone}\n` : ''}
+${subject ? `Project Type: ${subject}\n` : ''}
+${budget ? `Budget: ${budget}\n` : ''}
 
-Správa:
+Message:
 ${message}
 
 ---
-Odoslané z: ${request.headers.get('referer') || 'Unknown'}
-IP adresa: ${request.headers.get('x-forwarded-for') || request.headers.get('client-ip') || 'Unknown'}
-Čas: ${new Date().toLocaleString('sk-SK', { timeZone: 'Europe/Bratislava' })}
+Sent from: ${request.headers.get('referer') || 'Unknown'}
+IP address: ${request.headers.get('x-forwarded-for') || request.headers.get('client-ip') || 'Unknown'}
+Time: ${new Date().toLocaleString('en-US', { timeZone: 'Europe/Bratislava' })}
       `,
       html_body: `
 <!DOCTYPE html>
@@ -251,10 +254,10 @@ IP adresa: ${request.headers.get('x-forwarded-for') || request.headers.get('clie
 </head>
 <body>
   <div class="container">
-    <h2 class="heading">Nová správa z kontaktného formulára</h2>
+    <h2 class="heading">New message from contact form</h2>
     <div class="form-container">
       <div class="form-group">
-        <div class="label">Meno *</div>
+        <div class="label">Name *</div>
         <div class="value">${name}</div>
       </div>
       <div class="form-group">
@@ -262,25 +265,25 @@ IP adresa: ${request.headers.get('x-forwarded-for') || request.headers.get('clie
         <div class="value"><a href="mailto:${email}">${email}</a></div>
       </div>
       ${phone ? `<div class="form-group">
-        <div class="label">Telefón</div>
+        <div class="label">Phone</div>
         <div class="value">${phone}</div>
       </div>` : ''}
       ${subject ? `<div class="form-group">
-        <div class="label">Typ projektu *</div>
+        <div class="label">Project Type *</div>
         <div class="value">${subject}</div>
       </div>` : ''}
       ${budget ? `<div class="form-group">
-        <div class="label">Rozpočet</div>
+        <div class="label">Budget</div>
         <div class="value">${budget}</div>
       </div>` : ''}
       <div class="form-group">
-        <div class="label">Správa *</div>
+        <div class="label">Message *</div>
         <div class="message-box">${cleanMessage.replace(/\n/g, '<br>')}</div>
       </div>
       <div class="footer">
-        <p>Odoslané z: ${request.headers.get('referer') || 'Unknown'}<br>
+        <p>Sent from: ${request.headers.get('referer') || 'Unknown'}<br>
         IP: ${request.headers.get('x-forwarded-for') || request.headers.get('client-ip') || 'Unknown'}<br>
-        ${new Date().toLocaleString('sk-SK', { timeZone: 'Europe/Bratislava' })}</p>
+        ${new Date().toLocaleString('en-US', { timeZone: 'Europe/Bratislava' })}</p>
       </div>
     </div>
   </div>
@@ -305,7 +308,7 @@ IP adresa: ${request.headers.get('x-forwarded-for') || request.headers.get('clie
       return NextResponse.json(
         {
           success: true,
-          message: 'Ďakujeme! Vaša správa bola úspešne odoslaná.',
+          message: 'Thank you! Your message has been sent successfully.',
           details: 'Message sent successfully via SMTP2GO.',
         },
         { status: 200, headers }
@@ -314,7 +317,7 @@ IP adresa: ${request.headers.get('x-forwarded-for') || request.headers.get('clie
       console.error('SMTP2GO API error:', result);
       return NextResponse.json(
         {
-          error: 'Chyba pri odosielaní emailu.',
+          error: 'Error sending email.',
           details: result.data?.error || 'Failed to send email via SMTP2GO.',
         },
         { status: 500, headers }
@@ -324,7 +327,7 @@ IP adresa: ${request.headers.get('x-forwarded-for') || request.headers.get('clie
     console.error('Error processing contact form:', error);
     return NextResponse.json(
       {
-        error: 'Nastala chyba pri spracovaní vašej správy.',
+        error: 'An error occurred while processing your message.',
         details: error.message || 'Internal server error.',
       },
       { status: 500, headers }
